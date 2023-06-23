@@ -495,7 +495,7 @@ int main(void)
 
 	  for (int m = 0; m < 400; m++) //print data of distances
 		{		  
-			if (Dataprocess[m].distance > 0)
+			if (Dataprocess[m].distance < 1000  && Dataprocess[m].distance > 0)
 			{
 				sprintf((char*)str, "%2.2f , %d, ", Dataprocess[m].angle ,Dataprocess[m].distance);
 				HAL_UART_Transmit(&huart1, str, sizeof(str), 20);
