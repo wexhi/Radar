@@ -463,6 +463,8 @@ int main(void)
 	
 	OLED_Init();
 	
+	MPU6050_initialize();
+	DMP_Init();
 	
 	HAL_UART_Receive_IT(&huart5, usart5_ReadBuf, 1);
 	LED1_OFF();
@@ -477,6 +479,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  OLED_Show();
+	  Read_DMP();
 
 	  
 //	  for (int m = 0; m < 400; m++) //print data of angles
